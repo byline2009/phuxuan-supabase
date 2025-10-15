@@ -1,0 +1,76 @@
+.form-login {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: $spacing-xxl-2;
+  background-color: $neutral-grey-50;
+  border-radius: 1rem;
+  box-shadow: $shadow-light-60;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-l;
+  transition: all 0.25s ease;
+
+  &:hover {
+    box-shadow: $shadow-light-100;
+  }
+
+  label {
+    font-size: $subhead;
+    font-weight: $font-medium;
+    color: $neutral-grey-800;
+  }
+
+  input {
+    padding: $spacing-m $spacing-l;
+    border: 1px solid $neutral-grey-300;
+    border-radius: 0.5rem;
+    font-size: $body;
+    background-color: $neutral-grey-100;
+    color: $neutral-grey-900;
+    transition: all 0.25s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+      background-color: $white;
+    }
+  }
+
+  button {
+    padding: $spacing-m $spacing-xl;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: $font-semibold;
+    font-size: $body;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: $shadow-light-40;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: $shadow-light-80;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    // Nút Login (chính)
+    &:first-of-type {
+      background: linear-gradient(135deg, $primary-color, $p-light);
+      color: $white;
+    }
+
+    // Nút Signup (thứ 2)
+    &:last-of-type {
+      background: $white;
+      color: $primary-color;
+      border: 1px solid $primary-color;
+
+      &:hover {
+        background-color: $primary-100-t;
+      }
+    }
+  }
+}
