@@ -33,7 +33,6 @@ export async function updateSession(request) {
   const {
     data: { user },
   } = await supabase.auth.getUser()
-  console.log("user", user)
   // Nếu chưa login → redirect sang /login
   if (!user && !request.nextUrl.pathname.startsWith('/login')) {
     const redirectUrl = request.nextUrl.clone()

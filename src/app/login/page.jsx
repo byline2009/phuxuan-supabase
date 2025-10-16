@@ -1,6 +1,7 @@
 "use client";
-import { login, signup } from "./actions";
 import { useFormStatus } from "react-dom";
+import { SubmitButton } from "@components/button/SubmitButton";
+import { login, signup } from "./actions";
 
 export default function LoginPage() {
   const { pending } = useFormStatus();
@@ -11,8 +12,8 @@ export default function LoginPage() {
       <input id="email" name="email" type="email" required />
       <label htmlFor="password">Password:</label>
       <input id="password" name="password" type="password" required />
-      <button formAction={login}> {pending ? "Loading…" : "Login"}</button>
-      <button formAction={signup}> {pending ? "Loading…" : "Sign up"}</button>
+      <SubmitButton action={login} label="Login" />
+      <SubmitButton action={signup} label="Sign up" />
     </form>
   );
 }

@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import MultiLevelMenu from "../../components/multiMenu/MultiLevelMenu";
 import { logout } from "./action";
 import { useFormStatus } from "react-dom";
+import { SubmitButton } from "@components/button/SubmitButton";
 
 const HeaderApp = ({ toggleMenu, isOpen }) => {
   const pathname = usePathname();
@@ -16,7 +17,6 @@ const HeaderApp = ({ toggleMenu, isOpen }) => {
   const [isSearch, setIsSearch] = useState(false);
   const [searchVal, setSearchVal] = useState("");
   const router = useRouter();
-  const { pending } = useFormStatus(); // hook đặc biệt từ react-dom
 
   useEffect(() => {
     setIsOpenMenu(isOpen);
@@ -83,14 +83,12 @@ const HeaderApp = ({ toggleMenu, isOpen }) => {
           >
             Truy cập https://phuxuanschool.edu.vn/
           </a> */}
-          <form action={logout}>
-            <button
-              type="submit"
+          <form>
+            <SubmitButton
               className={`btn-mbf btn-solid`}
-              disabled={pending}
-            >
-              <span>{pending ? "Logging out..." : "Logout"}</span>
-            </button>
+              label="Logout"
+              action={logout}
+            />
           </form>
         </div>
       </div>

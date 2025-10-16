@@ -2,7 +2,6 @@ import { updateSession } from '@/utils/supabase/middleware'
 
 export async function middleware(request) {
     const { nextUrl } = request;
-    console.log("nextUrl", nextUrl);
 
     // Bỏ qua middleware cho các route xác thực
     if (
