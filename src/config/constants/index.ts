@@ -3,7 +3,6 @@
 //   link: string
 // }
 
-import { link } from "fs";
 
 const infoLink = [
   {
