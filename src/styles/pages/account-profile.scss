@@ -1,0 +1,106 @@
+.form-widget {
+  background: $neutral-grey-50;
+  max-width: 440px;
+  margin: 40px auto;
+  padding: $spacing-xxl-2;
+  border-radius: 12px;
+  box-shadow: $shadow-light-40;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-l;
+  color: $neutral-grey-900;
+  font-size: $body;
+
+  label {
+    display: block;
+    font-weight: $font-semibold;
+    font-size: $subhead;
+    color: $neutral-grey-700;
+    margin-bottom: $spacing-xs;
+  }
+
+  input {
+    width: 100%;
+    padding: $spacing-s $spacing-m;
+    border: 1px solid $neutral-grey-300;
+    border-radius: 6px;
+    background: $white;
+    color: $neutral-grey-900;
+    transition: all 0.2s ease;
+    font-size: $body;
+    line-height: $lh-body;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
+      background: $neutral-grey-100;
+    }
+
+    &:disabled {
+      background: $neutral-grey-100;
+      color: $neutral-grey-500;
+      cursor: not-allowed;
+    }
+  }
+
+  .button {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-weight: $font-semibold;
+    border-radius: 6px;
+    padding: $spacing-m $spacing-l;
+    font-size: $body;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    border: none;
+
+    &.block {
+      display: block;
+      width: 100%;
+    }
+
+    &.primary {
+      background: $primary-color;
+      color: $white;
+      box-shadow: $shadow-primary-20;
+
+      &:hover:not(:disabled) {
+        background: $p-dark;
+        transform: translateY(-1px);
+        box-shadow: $shadow-primary-40;
+      }
+    }
+
+    &:disabled {
+      background: $neutral-grey-300;
+      color: $neutral-grey-600;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  form {
+    margin-top: $spacing-s;
+  }
+
+  // Nút Sign out
+  .button:not(.primary) {
+    background: $neutral-grey-100;
+    color: $neutral-grey-800;
+    border: 1px solid $neutral-grey-300;
+    box-shadow: $shadow-light-20;
+
+    &:hover:not(:disabled) {
+      background: $neutral-grey-200;
+    }
+  }
+
+  // Responsive
+  @media (max-width: $small) {
+    padding: $spacing-xl;
+    gap: $spacing-m;
+  }
+}

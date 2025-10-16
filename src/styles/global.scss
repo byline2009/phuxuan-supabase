@@ -4,8 +4,15 @@
 @import "mbf-icon";
 @import "mixin";
 @import "./pages/login.scss";
+@import "./pages/account-profile.scss";
+@import "./pages/home.scss";
 @import "~bootstrap/scss/bootstrap";
-
+@import "./components/button.scss";
+@import "@components/header/header-app.scss";
+@import "@components/MobileMenu/mobile-menu.scss";
+@import "@components/footer/footer.scss";
+@import "@components/search/search-header.scss";
+@import "@components/multiMenu/multi-level-menu.scss";
 @layer base {
   :root {
     --background: 0 0% 100%;

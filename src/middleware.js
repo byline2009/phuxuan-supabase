@@ -1,6 +1,18 @@
 import { updateSession } from '@/utils/supabase/middleware'
 
 export async function middleware(request) {
+    const { nextUrl } = request;
+    console.log("nextUrl", nextUrl);
+
+    // Bỏ qua middleware cho các route xác thực
+    if (
+        nextUrl.pathname.startsWith("/auth/confirm") ||
+        nextUrl.pathname.startsWith("/verify") ||
+        nextUrl.pathname.startsWith("/login") ||
+        nextUrl.pathname.startsWith("/signup")
+    ) {
+        return; // Cho phép request đi qua, không gọi updateSession
+    }
     return await updateSession(request);
 }
 

@@ -7,7 +7,6 @@ import { createClient } from '@/utils/supabase/server'
 
 export async function login(formData) {
   const supabase = await createClient()
-
   // type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
@@ -23,6 +22,8 @@ export async function login(formData) {
   }
 
   revalidatePath('/', 'layout')
+  // ✅ Chuyển sang trang chính sau khi login thành công
+  redirect('/')
 }
 
 export async function signup(formData) {
