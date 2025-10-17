@@ -4,7 +4,6 @@ export default async function StudentsList() {
   const supabase = await createClient();
 
   const { data: students } = await supabase.from("students").select("*");
-  console.log("data", students);
 
   return (
     <div>
